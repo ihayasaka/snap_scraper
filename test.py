@@ -6,6 +6,7 @@ browser.get('http://www.style-arena.jp/')
 assert "東京のストリートファッション最新情報 | スタイルアリーナ" in browser.title
 
 home = Home(browser)
+home.get_area_urls()
 harajuku = home.open_harajuku_page()
 harajuku.get_style_list()
 
