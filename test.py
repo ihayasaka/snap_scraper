@@ -7,6 +7,7 @@ assert "東京のストリートファッション最新情報 | スタイルア
 
 home = Home(browser)
 home.get_area_urls()
+home.get_city_list()
 harajuku = home.open_harajuku_page()
 harajuku.get_style_list()
 

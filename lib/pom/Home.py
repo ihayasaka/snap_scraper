@@ -10,6 +10,11 @@ class Home:
     def get_top_area_wrap(self):
         return self.driver.find_element_by_id('top_area_wrap')
 
+    def get_city_list(self):
+        elems = self.get_top_area_wrap().find_elements_by_class_name('cms_list')
+        for elm in elems:
+            self.logger.debug(elm.get_attribute('data-published'))
+
     def get_area_urls(self):
         urls = []
         elements = self.driver.find_elements_by_xpath("//h2[@class='title_parts01 title_type02']")
