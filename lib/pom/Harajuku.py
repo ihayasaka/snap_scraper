@@ -11,6 +11,7 @@ class Harajuku:
         return self.driver.find_element_by_class_name('street_area_main')
 
     def get_style_list(self):
-        elements = self.driver.find_elements_by_xpath("//figure[@class='first_img img_loaded']")
+        elements = self.driver.find_elements_by_class_name('cms_list_figure_in')
         for elm in elements:
-            self.logger.debug(elm.get_attribute('data-image'))
+            style_elm = elm.find_element_by_tag_name('a')
+            self.logger.debug(style_elm.get_attribute('href'))
